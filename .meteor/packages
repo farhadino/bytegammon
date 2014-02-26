@@ -11,3 +11,5 @@ coffeescript
 stylus
 bootstrap
 backbone
+jquery
+underscore
