@@ -12,10 +12,9 @@ bytefont = 'Press Start 2P'
     font-family inherit
     font-size 0.7em
 
-  my-icon
+  gammonboard
     position relative
-
-  my-icon
+  gammonboard
   i
     position relative
     display inline-block
@@ -23,244 +22,92 @@ bytefont = 'Press Start 2P'
     height 20em
     background-color #ce9446
 
-// Size of each 'pixel' to draw
-ps = 5px // Try changing this to eg. 4px
+// pixel size
+ps = 5px
 
-// Calculate 'upsized' value
+// Upsize pixel
 p(n)
   ps * n
 
-// Sprite itself
-#spike
-  position absolute
-  top 150px
-  left 400px
-  text-align center
-  display block
-  margin 40px auto 0 auto
-  font-family bytefont
+triangle-bottom(color)
+  box-shadow:
+    p(3) p(0) 0 color,
+    p(3) p(1) 0 color,
+    p(2) p(2) 0 color,
+    p(3) p(2) 0 color,
+    p(4) p(2) 0 color,
+    p(2) p(3) 0 color,
+    p(3) p(3) 0 color,
+    p(4) p(3) 0 color,
+    p(2) p(4) 0 color,
+    p(3) p(4) 0 color,
+    p(4) p(4) 0 color,
+    p(2) p(5) 0 color,
+    p(3) p(5) 0 color,
+    p(4) p(5) 0 color,
+    p(2) p(6) 0 color,
+    p(3) p(6) 0 color,
+    p(4) p(6) 0 color,
+    p(2) p(7) 0 color,
+    p(3) p(7) 0 color,
+    p(4) p(7) 0 color,
+    p(2) p(8) 0 color,
+    p(3) p(8) 0 color,
+    p(4) p(8) 0 color,
+    p(1) p(9) 0 color,
+    p(2) p(9) 0 color,
+    p(3) p(9) 0 color,
+    p(4) p(9) 0 color,
+    p(5) p(9) 0 color,
+    p(1) p(10) 0 color,
+    p(2) p(10) 0 color,
+    p(3) p(10) 0 color,
+    p(4) p(10) 0 color,
+    p(5) p(10) 0 color,
+    p(1) p(11) 0 color,
+    p(2) p(11) 0 color,
+    p(3) p(11) 0 color,
+    p(4) p(11) 0 color,
+    p(5) p(11) 0 color,
+    p(1) p(12) 0 color,
+    p(2) p(12) 0 color,
+    p(3) p(12) 0 color,
+    p(4) p(12) 0 color,
+    p(5) p(12) 0 color,
+    p(1) p(13) 0 color,
+    p(2) p(13) 0 color,
+    p(3) p(13) 0 color,
+    p(4) p(13) 0 color,
+    p(5) p(13) 0 color,
+    p(1) p(14) 0 color,
+    p(2) p(14) 0 color,
+    p(3) p(14) 0 color,
+    p(4) p(14) 0 color,
+    p(5) p(14) 0 color,
+    p(1) p(15) 0 color,
+    p(2) p(15) 0 color,
+    p(3) p(15) 0 color,
+    p(4) p(15) 0 color,
+    p(5) p(15) 0 color
 
-  sprite
-  div
-    // Sets size of pixels for this element
-    width p(1)
-    height p(1)
-    // Drawing
-    box-shadow:
-      p(6) 0 0 black,
-      p(7) 0 0 black,
-      p(8) 0 0 black,
-      p(9) 0 0 black,
-      p(10) 0 0 black,
-      p(11) 0 0 black,
-      p(4) p(1) 0 black,
-      p(5) p(1) 0 black,
-      p(6) p(1) 0 black,
-      p(7) p(1) 0 white,
-      p(8) p(1) 0 red,
-      p(9) p(1) 0 red,
-      p(10) p(1) 0 white,
-      p(11) p(1) 0 black,
-      p(12) p(1) 0 black,
-      p(13) p(1) 0 black,
-      p(3) p(2) 0 black,
-      p(4) p(2) 0 black,
-      p(5) p(2) 0 white,
-      p(6) p(2) 0 white,
-      p(7) p(2) 0 white,
-      p(8) p(2) 0 red,
-      p(9) p(2) 0 red,
-      p(10) p(2) 0 white,
-      p(11) p(2) 0 white,
-      p(12) p(2) 0 white,
-      p(13) p(2) 0 black,
-      p(14) p(2) 0 black,
-      p(2) p(3) 0 black,
-      p(3) p(3) 0 black,
-      p(4) p(3) 0 red,
-      p(5) p(3) 0 white,
-      p(6) p(3) 0 white,
-      p(7) p(3) 0 red,
-      p(8) p(3) 0 red,
-      p(9) p(3) 0 red,
-      p(10) p(3) 0 red,
-      p(11) p(3) 0 white,
-      p(12) p(3) 0 white,
-      p(13) p(3) 0 red,
-      p(14) p(3) 0 black,
-      p(15) p(3) 0 black,
-      p(2) p(4) 0 black,
-      p(3) p(4) 0 white,
-      p(4) p(4) 0 red,
-      p(5) p(4) 0 red,
-      p(6) p(4) 0 red,
-      p(7) p(4) 0 red,
-      p(8) p(4) 0 red,
-      p(9) p(4) 0 red,
-      p(10) p(4) 0 red,
-      p(11) p(4) 0 red,
-      p(12) p(4) 0 red,
-      p(13) p(4) 0 red,
-      p(14) p(4) 0 white,
-      p(15) p(4) 0 black,
-      p(1) p(5) 0 black,
-      p(2) p(5) 0 black,
-      p(3) p(5) 0 white,
-      p(4) p(5) 0 white,
-      p(5) p(5) 0 red,
-      p(6) p(5) 0 red,
-      p(7) p(5) 0 white,
-      p(8) p(5) 0 white,
-      p(9) p(5) 0 white,
-      p(10) p(5) 0 white,
-      p(11) p(5) 0 red,
-      p(12) p(5) 0 red,
-      p(13) p(5) 0 white,
-      p(14) p(5) 0 white,
-      p(15) p(5) 0 black,
-      p(16) p(5) 0 black,
-      p(1) p(6) 0 black,
-      p(2) p(6) 0 white,
-      p(3) p(6) 0 white,
-      p(4) p(6) 0 white,
-      p(5) p(6) 0 red,
-      p(6) p(6) 0 white,
-      p(7) p(6) 0 white,
-      p(8) p(6) 0 white,
-      p(9) p(6) 0 white,
-      p(10) p(6) 0 white,
-      p(11) p(6) 0 white,
-      p(12) p(6) 0 red,
-      p(13) p(6) 0 white,
-      p(14) p(6) 0 white,
-      p(15) p(6) 0 white,
-      p(16) p(6) 0 black,
-      p(1) p(7) 0 black,
-      p(2) p(7) 0 white,
-      p(3) p(7) 0 white,
-      p(4) p(7) 0 white,
-      p(5) p(7) 0 red,
-      p(6) p(7) 0 white,
-      p(7) p(7) 0 white,
-      p(8) p(7) 0 white,
-      p(9) p(7) 0 white,
-      p(10) p(7) 0 white,
-      p(11) p(7) 0 white,
-      p(12) p(7) 0 red,
-      p(13) p(7) 0 white,
-      p(14) p(7) 0 white,
-      p(15) p(7) 0 white,
-      p(16) p(7) 0 black,
-      p(1) p(8) 0 black,
-      p(2) p(8) 0 white,
-      p(3) p(8) 0 white,
-      p(4) p(8) 0 red,
-      p(5) p(8) 0 red,
-      p(6) p(8) 0 white,
-      p(7) p(8) 0 white,
-      p(8) p(8) 0 white,
-      p(9) p(8) 0 white,
-      p(10) p(8) 0 white,
-      p(11) p(8) 0 white,
-      p(12) p(8) 0 red,
-      p(13) p(8) 0 red,
-      p(14) p(8) 0 white,
-      p(15) p(8) 0 white,
-      p(16) p(8) 0 black,
-      p(1) p(9) 0 black,
-      p(2) p(9) 0 red,
-      p(3) p(9) 0 red,
-      p(4) p(9) 0 red,
-      p(5) p(9) 0 red,
-      p(6) p(9) 0 red,
-      p(7) p(9) 0 white,
-      p(8) p(9) 0 white,
-      p(9) p(9) 0 white,
-      p(10) p(9) 0 white,
-      p(11) p(9) 0 red,
-      p(12) p(9) 0 red,
-      p(13) p(9) 0 red,
-      p(14) p(9) 0 red,
-      p(15) p(9) 0 red,
-      p(16) p(9) 0 black,
-      p(1) p(10) 0 black,
-      p(2) p(10) 0 red,
-      p(3) p(10) 0 red,
-      p(4) p(10) 0 black,
-      p(5) p(10) 0 black,
-      p(6) p(10) 0 black,
-      p(7) p(10) 0 black,
-      p(8) p(10) 0 black,
-      p(9) p(10) 0 black,
-      p(10) p(10) 0 black,
-      p(11) p(10) 0 black,
-      p(12) p(10) 0 black,
-      p(13) p(10) 0 black,
-      p(14) p(10) 0 red,
-      p(15) p(10) 0 red,
-      p(16) p(10) 0 black,
-      p(1) p(11) 0 black,
-      p(2) p(11) 0 black,
-      p(3) p(11) 0 black,
-      p(4) p(11) 0 black,
-      p(5) p(11) 0 white,
-      p(6) p(11) 0 white,
-      p(7) p(11) 0 black,
-      p(8) p(11) 0 white,
-      p(9) p(11) 0 white,
-      p(10) p(11) 0 black,
-      p(11) p(11) 0 white,
-      p(12) p(11) 0 white,
-      p(13) p(11) 0 black,
-      p(14) p(11) 0 black,
-      p(15) p(11) 0 black,
-      p(16) p(11) 0 black,
-      p(2) p(12) 0 black,
-      p(3) p(12) 0 black,
-      p(4) p(12) 0 white,
-      p(5) p(12) 0 white,
-      p(6) p(12) 0 white,
-      p(7) p(12) 0 black,
-      p(8) p(12) 0 white,
-      p(9) p(12) 0 white,
-      p(10) p(12) 0 black,
-      p(11) p(12) 0 white,
-      p(12) p(12) 0 white,
-      p(13) p(12) 0 white,
-      p(14) p(12) 0 black,
-      p(15) p(12) 0 black,
-      p(3) p(13) 0 black,
-      p(4) p(13) 0 white,
-      p(5) p(13) 0 white,
-      p(6) p(13) 0 white,
-      p(7) p(13) 0 white,
-      p(8) p(13) 0 white,
-      p(9) p(13) 0 white,
-      p(10) p(13) 0 white,
-      p(11) p(13) 0 white,
-      p(12) p(13) 0 white,
-      p(13) p(13) 0 white,
-      p(14) p(13) 0 black,
-      p(3) p(14) 0 black,
-      p(4) p(14) 0 black,
-      p(5) p(14) 0 white,
-      p(6) p(14) 0 white,
-      p(7) p(14) 0 white,
-      p(8) p(14) 0 white,
-      p(9) p(14) 0 white,
-      p(10) p(14) 0 white,
-      p(11) p(14) 0 white,
-      p(12) p(14) 0 white,
-      p(13) p(14) 0 black,
-      p(14) p(14) 0 black,
-      p(4) p(15) 0 black,
-      p(5) p(15) 0 black,
-      p(6) p(15) 0 black,
-      p(7) p(15) 0 black,
-      p(8) p(15) 0 black,
-      p(9) p(15) 0 black,
-      p(10) p(15) 0 black,
-      p(11) p(15) 0 black,
-      p(12) p(15) 0 black,
-      p(13) p(15) 0 black
+// Spike sprites
+spike-bottom(top, left, color)
+  position absolute
+  top 0px + top
+  left 0px + left
+  display block
+  // Sets size of pixels for this element
+  width p(1)
+  height p(1)
+  // Drawing
+  triangle-bottom(color)
+
+#spike1
+  spike-bottom(290, 500, black)
+
+#spike2
+  spike-bottom(290, 550, white)
+
+
+
 
