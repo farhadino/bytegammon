@@ -24,7 +24,7 @@ bytefont = 'Press Start 2P'
     background-color #ce9446
 
 // pixel size
-ps = 5px
+ps = 4px
 
 // Upsize pixel
 p(n)
@@ -91,8 +91,69 @@ triangle-bottom(color)
     p(4) p(15) 0 color,
     p(5) p(15) 0 color
 
+triangle-top(color)
+  box-shadow:
+    p(3) p(0) 0 color,
+    p(3) p(1) 0 color,
+    p(2) p(2) 0 color,
+    p(3) p(2) 0 color,
+    p(4) p(2) 0 color,
+    p(2) p(3) 0 color,
+    p(3) p(3) 0 color,
+    p(4) p(3) 0 color,
+    p(2) p(4) 0 color,
+    p(3) p(4) 0 color,
+    p(4) p(4) 0 color,
+    p(2) p(5) 0 color,
+    p(3) p(5) 0 color,
+    p(4) p(5) 0 color,
+    p(2) p(6) 0 color,
+    p(3) p(6) 0 color,
+    p(4) p(6) 0 color,
+    p(2) p(7) 0 color,
+    p(3) p(7) 0 color,
+    p(4) p(7) 0 color,
+    p(2) p(8) 0 color,
+    p(3) p(8) 0 color,
+    p(4) p(8) 0 color,
+    p(1) p(9) 0 color,
+    p(2) p(9) 0 color,
+    p(3) p(9) 0 color,
+    p(4) p(9) 0 color,
+    p(5) p(9) 0 color,
+    p(1) p(10) 0 color,
+    p(2) p(10) 0 color,
+    p(3) p(10) 0 color,
+    p(4) p(10) 0 color,
+    p(5) p(10) 0 color,
+    p(1) p(11) 0 color,
+    p(2) p(11) 0 color,
+    p(3) p(11) 0 color,
+    p(4) p(11) 0 color,
+    p(5) p(11) 0 color,
+    p(1) p(12) 0 color,
+    p(2) p(12) 0 color,
+    p(3) p(12) 0 color,
+    p(4) p(12) 0 color,
+    p(5) p(12) 0 color,
+    p(1) p(13) 0 color,
+    p(2) p(13) 0 color,
+    p(3) p(13) 0 color,
+    p(4) p(13) 0 color,
+    p(5) p(13) 0 color,
+    p(1) p(14) 0 color,
+    p(2) p(14) 0 color,
+    p(3) p(14) 0 color,
+    p(4) p(14) 0 color,
+    p(5) p(14) 0 color,
+    p(1) p(15) 0 color,
+    p(2) p(15) 0 color,
+    p(3) p(15) 0 color,
+    p(4) p(15) 0 color,
+    p(5) p(15) 0 color
+
 // Spike sprites
-spike-bottom(top, left, color)
+drawSpike(top, left, color, triangle)
   position absolute
   top 0px + top
   left 0px + left
@@ -101,35 +162,63 @@ spike-bottom(top, left, color)
   width p(1)
   height p(1)
   // Drawing
-  triangle-bottom(color)
+  triangle(color)
 
-st = 250 // spike top
-sl = -220 //spike left
-sg = 35 //spi gap
+stu = 100  // spikes top upper
+stl = 250  // spikes top lower
+sl  = -220 // spike left
+sg  = 35   // spi gap
 
-.bottomSpikes
+.pointsUpper
   position relative
-.bottomSpikes > i
-  spike-bottom(st, sl, black)
-.bottomSpikes > i+i
-  spike-bottom(st, sl + 1*sg, white)
-.bottomSpikes > i+i+i
-  spike-bottom(st, sl + 2*sg, black)
-.bottomSpikes > i+i+i+i
-  spike-bottom(st, sl + 3*sg, white)
-.bottomSpikes > i+i+i+i+i
-  spike-bottom(st, sl + 4*sg, black)
-.bottomSpikes > i+i+i+i+i+i
-  spike-bottom(st, sl + 5*sg, white)
-.bottomSpikes > i+i+i+i+i+i+i
-  spike-bottom(st, sl + 6*sg, black)
-.bottomSpikes > i+i+i+i+i+i+i+i
-  spike-bottom(st, sl + 7*sg, white)
-.bottomSpikes > i+i+i+i+i+i+i+i+i
-  spike-bottom(st, sl + 8*sg, black)
-.bottomSpikes > i+i+i+i+i+i+i+i+i+i
-  spike-bottom(st, sl + 9*sg, white)
-.bottomSpikes > i+i+i+i+i+i+i+i+i+i+i
-  spike-bottom(st, sl + 10*sg, black)
-.bottomSpikes > i+i+i+i+i+i+i+i+i+i+i+i
-  spike-bottom(st, sl + 11*sg, white)
+.pointsUpper > i
+  drawSpike(stu, sl, black, triangle-top)
+.pointsUpper > i+i
+  drawSpike(stu, sl + 1*sg, white, triangle-top)
+.pointsUpper > i+i+i
+  drawSpike(stu, sl + 2*sg, black, triangle-top)
+.pointsUpper > i+i+i+i
+  drawSpike(stu, sl + 3*sg, white, triangle-top)
+.pointsUpper > i+i+i+i+i
+  drawSpike(stu, sl + 4*sg, black, triangle-top)
+.pointsUpper > i+i+i+i+i+i
+  drawSpike(stu, sl + 5*sg, white, triangle-top)
+.pointsUpper > i+i+i+i+i+i+i
+  drawSpike(stu, sl + 6*sg, black, triangle-top)
+.pointsUpper > i+i+i+i+i+i+i+i
+  drawSpike(stu, sl + 7*sg, white, triangle-top)
+.pointsUpper > i+i+i+i+i+i+i+i+i
+  drawSpike(stu, sl + 8*sg, black, triangle-top)
+.pointsUpper > i+i+i+i+i+i+i+i+i+i
+  drawSpike(stu, sl + 9*sg, white, triangle-top)
+.pointsUpper > i+i+i+i+i+i+i+i+i+i+i
+  drawSpike(stu, sl + 10*sg, black, triangle-top)
+.pointsUpper > i+i+i+i+i+i+i+i+i+i+i+i
+  drawSpike(stu, sl + 11*sg, white, triangle-top)
+
+.pointsLower
+  position relative
+.pointsLower > i
+  drawSpike(stl, sl, black, triangle-bottom)
+.pointsLower > i+i
+  drawSpike(stl, sl + 1*sg, white, triangle-bottom)
+.pointsLower > i+i+i
+  drawSpike(stl, sl + 2*sg, black, triangle-bottom)
+.pointsLower > i+i+i+i
+  drawSpike(stl, sl + 3*sg, white, triangle-bottom)
+.pointsLower > i+i+i+i+i
+  drawSpike(stl, sl + 4*sg, black, triangle-bottom)
+.pointsLower > i+i+i+i+i+i
+  drawSpike(stl, sl + 5*sg, white, triangle-bottom)
+.pointsLower > i+i+i+i+i+i+i
+  drawSpike(stl, sl + 6*sg, black, triangle-bottom)
+.pointsLower > i+i+i+i+i+i+i+i
+  drawSpike(stl, sl + 7*sg, white, triangle-bottom)
+.pointsLower > i+i+i+i+i+i+i+i+i
+  drawSpike(stl, sl + 8*sg, black, triangle-bottom)
+.pointsLower > i+i+i+i+i+i+i+i+i+i
+  drawSpike(stl, sl + 9*sg, white, triangle-bottom)
+.pointsLower > i+i+i+i+i+i+i+i+i+i+i
+  drawSpike(stl, sl + 10*sg, black, triangle-bottom)
+.pointsLower > i+i+i+i+i+i+i+i+i+i+i+i
+  drawSpike(stl, sl + 11*sg, white, triangle-bottom)
