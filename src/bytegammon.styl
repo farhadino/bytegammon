@@ -12,14 +12,15 @@ bytefont = 'Press Start 2P'
     font-family inherit
     font-size 0.7em
 
-  gammonboard
+  .gammonboard
     position relative
-  gammonboard
-  i
-    position relative
+  .gammonboard > i
+    position absolute
     display inline-block
     width 34em
     height 20em
+    top 70px
+    left -250px
     background-color #ce9446
 
 // pixel size
@@ -102,32 +103,33 @@ spike-bottom(top, left, color)
   // Drawing
   triangle-bottom(color)
 
-ss = 500 //spike start
-sg = 35 //spike gap
+st = 250 // spike top
+sl = -220 //spike left
+sg = 35 //spi gap
 
-#spike1
-  spike-bottom(290, ss, black)
-#spike2
-  spike-bottom(290, ss + 1*sg, white)
-#spike3
-  spike-bottom(290, ss + 2*sg, black)
-#spike4
-  spike-bottom(290, ss + 3*sg, white)
-#spike5
-  spike-bottom(290, ss + 4*sg, black)
-#spike6
-  spike-bottom(290, ss + 5*sg, white)
-#spike7
-  spike-bottom(290, ss + 6*sg, black)
-#spike8
-  spike-bottom(290, ss + 7*sg, white)
-#spike9
-  spike-bottom(290, ss + 8*sg, black)
-#spike10
-  spike-bottom(290, ss + 9*sg, white)
-#spike11
-  spike-bottom(290, ss + 10*sg, black)
-#spike12
-  spike-bottom(290, ss + 11*sg, white)
-
-
+.bottomSpikes
+  position relative
+.bottomSpikes > i
+  spike-bottom(st, sl, black)
+.bottomSpikes > i+i
+  spike-bottom(st, sl + 1*sg, white)
+.bottomSpikes > i+i+i
+  spike-bottom(st, sl + 2*sg, black)
+.bottomSpikes > i+i+i+i
+  spike-bottom(st, sl + 3*sg, white)
+.bottomSpikes > i+i+i+i+i
+  spike-bottom(st, sl + 4*sg, black)
+.bottomSpikes > i+i+i+i+i+i
+  spike-bottom(st, sl + 5*sg, white)
+.bottomSpikes > i+i+i+i+i+i+i
+  spike-bottom(st, sl + 6*sg, black)
+.bottomSpikes > i+i+i+i+i+i+i+i
+  spike-bottom(st, sl + 7*sg, white)
+.bottomSpikes > i+i+i+i+i+i+i+i+i
+  spike-bottom(st, sl + 8*sg, black)
+.bottomSpikes > i+i+i+i+i+i+i+i+i+i
+  spike-bottom(st, sl + 9*sg, white)
+.bottomSpikes > i+i+i+i+i+i+i+i+i+i+i
+  spike-bottom(st, sl + 10*sg, black)
+.bottomSpikes > i+i+i+i+i+i+i+i+i+i+i+i
+  spike-bottom(st, sl + 11*sg, white)
