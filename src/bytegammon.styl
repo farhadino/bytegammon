@@ -17,14 +17,14 @@ bytefont = 'Press Start 2P'
   .gammonboard > i
     position absolute
     display inline-block
-    width 34em
-    height 20em
+    width 36em
+    height 32em
     top 70px
     left -250px
     background-color #ce9446
 
 // pixel size
-ps = 4px
+ps = 7px
 
 // Upsize pixel
 p(n)
@@ -34,9 +34,7 @@ triangle-bottom(color)
   box-shadow:
     p(3) p(0) 0 color,
     p(3) p(1) 0 color,
-    p(2) p(2) 0 color,
     p(3) p(2) 0 color,
-    p(4) p(2) 0 color,
     p(2) p(3) 0 color,
     p(3) p(3) 0 color,
     p(4) p(3) 0 color,
@@ -55,11 +53,9 @@ triangle-bottom(color)
     p(2) p(8) 0 color,
     p(3) p(8) 0 color,
     p(4) p(8) 0 color,
-    p(1) p(9) 0 color,
     p(2) p(9) 0 color,
     p(3) p(9) 0 color,
     p(4) p(9) 0 color,
-    p(5) p(9) 0 color,
     p(1) p(10) 0 color,
     p(2) p(10) 0 color,
     p(3) p(10) 0 color,
@@ -93,20 +89,36 @@ triangle-bottom(color)
 
 triangle-top(color)
   box-shadow:
+    p(1) p(0) 0 color,
+    p(2) p(0) 0 color,
     p(3) p(0) 0 color,
+    p(4) p(0) 0 color,
+    p(5) p(0) 0 color,
+    p(1) p(1) 0 color,
+    p(2) p(1) 0 color,
     p(3) p(1) 0 color,
+    p(4) p(1) 0 color,
+    p(5) p(1) 0 color,
+    p(1) p(2) 0 color,
     p(2) p(2) 0 color,
     p(3) p(2) 0 color,
     p(4) p(2) 0 color,
+    p(5) p(2) 0 color,
+    p(1) p(3) 0 color,
     p(2) p(3) 0 color,
     p(3) p(3) 0 color,
     p(4) p(3) 0 color,
+    p(5) p(3) 0 color,
+    p(1) p(4) 0 color,
     p(2) p(4) 0 color,
     p(3) p(4) 0 color,
-    p(4) p(4) 0 color,
+    p(4) p(4) 0 color,    
+    p(5) p(4) 0 color,
+    p(1) p(5) 0 color,
     p(2) p(5) 0 color,
     p(3) p(5) 0 color,
     p(4) p(5) 0 color,
+    p(5) p(5) 0 color,    
     p(2) p(6) 0 color,
     p(3) p(6) 0 color,
     p(4) p(6) 0 color,
@@ -116,41 +128,21 @@ triangle-top(color)
     p(2) p(8) 0 color,
     p(3) p(8) 0 color,
     p(4) p(8) 0 color,
-    p(1) p(9) 0 color,
     p(2) p(9) 0 color,
     p(3) p(9) 0 color,
     p(4) p(9) 0 color,
-    p(5) p(9) 0 color,
-    p(1) p(10) 0 color,
     p(2) p(10) 0 color,
     p(3) p(10) 0 color,
     p(4) p(10) 0 color,
-    p(5) p(10) 0 color,
-    p(1) p(11) 0 color,
     p(2) p(11) 0 color,
     p(3) p(11) 0 color,
     p(4) p(11) 0 color,
-    p(5) p(11) 0 color,
-    p(1) p(12) 0 color,
     p(2) p(12) 0 color,
     p(3) p(12) 0 color,
     p(4) p(12) 0 color,
-    p(5) p(12) 0 color,
-    p(1) p(13) 0 color,
-    p(2) p(13) 0 color,
     p(3) p(13) 0 color,
-    p(4) p(13) 0 color,
-    p(5) p(13) 0 color,
-    p(1) p(14) 0 color,
-    p(2) p(14) 0 color,
     p(3) p(14) 0 color,
-    p(4) p(14) 0 color,
-    p(5) p(14) 0 color,
-    p(1) p(15) 0 color,
-    p(2) p(15) 0 color,
-    p(3) p(15) 0 color,
-    p(4) p(15) 0 color,
-    p(5) p(15) 0 color
+    p(3) p(15) 0 color
 
 // Spike sprites
 drawSpike(top, left, color, triangle)
@@ -165,9 +157,10 @@ drawSpike(top, left, color, triangle)
   triangle(color)
 
 stu = 100  // spikes top upper
-stl = 250  // spikes top lower
-sl  = -220 // spike left
+stl = 370  // spikes top lower
+sl  = -230 // spike left
 sg  = 35   // spi gap
+sb  = 30 + sl  // board gap
 
 .pointsUpper
   position relative
@@ -184,17 +177,17 @@ sg  = 35   // spi gap
 .pointsUpper > i+i+i+i+i+i
   drawSpike(stu, sl + 5*sg, white, triangle-top)
 .pointsUpper > i+i+i+i+i+i+i
-  drawSpike(stu, sl + 6*sg, black, triangle-top)
+  drawSpike(stu, sb + 6*sg, black, triangle-top)
 .pointsUpper > i+i+i+i+i+i+i+i
-  drawSpike(stu, sl + 7*sg, white, triangle-top)
+  drawSpike(stu, sb + 7*sg, white, triangle-top)
 .pointsUpper > i+i+i+i+i+i+i+i+i
-  drawSpike(stu, sl + 8*sg, black, triangle-top)
+  drawSpike(stu, sb + 8*sg, black, triangle-top)
 .pointsUpper > i+i+i+i+i+i+i+i+i+i
-  drawSpike(stu, sl + 9*sg, white, triangle-top)
+  drawSpike(stu, sb + 9*sg, white, triangle-top)
 .pointsUpper > i+i+i+i+i+i+i+i+i+i+i
-  drawSpike(stu, sl + 10*sg, black, triangle-top)
+  drawSpike(stu, sb + 10*sg, black, triangle-top)
 .pointsUpper > i+i+i+i+i+i+i+i+i+i+i+i
-  drawSpike(stu, sl + 11*sg, white, triangle-top)
+  drawSpike(stu, sb + 11*sg, white, triangle-top)
 
 .pointsLower
   position relative
@@ -211,14 +204,14 @@ sg  = 35   // spi gap
 .pointsLower > i+i+i+i+i+i
   drawSpike(stl, sl + 5*sg, white, triangle-bottom)
 .pointsLower > i+i+i+i+i+i+i
-  drawSpike(stl, sl + 6*sg, black, triangle-bottom)
+  drawSpike(stl, sb + 6*sg, black, triangle-bottom)
 .pointsLower > i+i+i+i+i+i+i+i
-  drawSpike(stl, sl + 7*sg, white, triangle-bottom)
+  drawSpike(stl, sb + 7*sg, white, triangle-bottom)
 .pointsLower > i+i+i+i+i+i+i+i+i
-  drawSpike(stl, sl + 8*sg, black, triangle-bottom)
+  drawSpike(stl, sb + 8*sg, black, triangle-bottom)
 .pointsLower > i+i+i+i+i+i+i+i+i+i
-  drawSpike(stl, sl + 9*sg, white, triangle-bottom)
+  drawSpike(stl, sb + 9*sg, white, triangle-bottom)
 .pointsLower > i+i+i+i+i+i+i+i+i+i+i
-  drawSpike(stl, sl + 10*sg, black, triangle-bottom)
+  drawSpike(stl, sb + 10*sg, black, triangle-bottom)
 .pointsLower > i+i+i+i+i+i+i+i+i+i+i+i
-  drawSpike(stl, sl + 11*sg, white, triangle-bottom)
+  drawSpike(stl, sb + 11*sg, white, triangle-bottom)
