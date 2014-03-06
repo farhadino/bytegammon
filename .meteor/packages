@@ -11,6 +11,8 @@ coffeescript
 stylus
 bootstrap
 backbone
-jquery
 underscore
 spiderable
+jquery
+jquery-ui-bootstrap
+jquery-ui
