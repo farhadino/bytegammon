@@ -7,11 +7,12 @@ if root.Meteor.isClient
   root.Template.hello.events = "click input": ->
     alert "You pressed the button"
 
-  $('#hello').draggable()
-    
   $ ->
     $('#hello').css('display', 'none')
     $('#hello').delay(100).fadeIn(1000)
+
+    $('#bam').draggable()
+
     console.debug "hello"
 
 if Meteor.isServer
