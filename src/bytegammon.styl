@@ -113,13 +113,13 @@ triangle-top(color)
     p(1) p(4) 0 color,
     p(2) p(4) 0 color,
     p(3) p(4) 0 color,
-    p(4) p(4) 0 color,    
+    p(4) p(4) 0 color,
     p(5) p(4) 0 color,
     p(1) p(5) 0 color,
     p(2) p(5) 0 color,
     p(3) p(5) 0 color,
     p(4) p(5) 0 color,
-    p(5) p(5) 0 color,    
+    p(5) p(5) 0 color,
     p(2) p(6) 0 color,
     p(3) p(6) 0 color,
     p(4) p(6) 0 color,
@@ -218,17 +218,11 @@ sb  = 30 + sl  // board gap
   drawSpike(stl, sb + 11*sg, white, triangle-bottom)
 
 #bam
-  width 3em
+  width 2.5em
   height 8em
   background-color grey
-
-#point
-  drawSpike(0, 0, red, triangle-bottom)
-#point > i
-  position absolute
-  display inline-block
-  width 5em
-  height 5em
-  top 50px
-  left -350px
-  background-color black
+  .point
+    drawSpike(0, 0, red, triangle-bottom)
+    position absolute
+    display inline-block
+    margin-left -7px
