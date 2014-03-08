@@ -217,10 +217,23 @@ sb  = 30 + sl  // board gap
 .pointsLower > i+i+i+i+i+i+i+i+i+i+i+i
   drawSpike(stl, sb + 11*sg, white, triangle-bottom)
 
-#bam
+#bam > div
+  position relative
   width 2.5em
   height 8em
   background-color grey
+  margin-left -60px
+  .point
+    drawSpike(0, 0, red, triangle-bottom)
+    position absolute
+    display inline-block
+    margin-left -7px
+#bam > div > div
+  position relative
+  width 2.5em
+  height 8em
+  background-color grey
+  margin-left -10px
   .point
     drawSpike(0, 0, red, triangle-bottom)
     position absolute
