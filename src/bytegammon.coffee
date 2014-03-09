@@ -7,18 +7,12 @@ if root.Meteor.isClient
   root.Template.hello.events = "click input": ->
     alert "You pressed the button"
 
-  allowDrop = (ev) -> ev.preventDefault()
-  drag = (ev) -> ev.dataTransfer.setData("Text",ev.target.id)
-  drop = (ev) ->
-    ev.preventDefault()
-    data = ev.dataTransfer.getData("Text")
-    ev.target.appendChild(document.getElementById(data))
-
   $ ->
     $('#hello').css('display', 'none')
     $('#hello').delay(100).fadeIn(1000)
 
     $('.point').draggable()
+    $('.pointDrop').droppable()
 
     console.debug "hello"
 
