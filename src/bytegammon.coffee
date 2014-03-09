@@ -18,7 +18,7 @@ if root.Meteor.isClient
     $('#hello').css('display', 'none')
     $('#hello').delay(100).fadeIn(1000)
 
-    #$('#bam').draggable()
+    $('.point').draggable()
 
     console.debug "hello"
 

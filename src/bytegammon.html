@@ -1,27 +1,6 @@
 <head>
   <title>bytegammon</title>
   <link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
-  <script>
-function allowDrop(ev)
-{
-ev.preventDefault();
-}
-
-function drag(ev)
-{
-ev.dataTransfer.setData("Text",ev.target.id);
-}
-
-function drop(ev)
-{
-ev.preventDefault();
-var data = ev.dataTransfer.getData("Text");
-ev.target.appendChild(document.getElementById(data));
-}
-</script>
-
-
-
 </head>
 
 <body>
@@ -39,8 +18,8 @@ ev.target.appendChild(document.getElementById(data));
 
 
       <div id="bam">
-        <div ondrop="drop(event)" ondragover="allowDrop(event)"><i class="point"></i></div>
-        <div draggable="true" ondragstart="drag(event)" ><i class="point"></i></div>
+        <div class="point"><i></i></div>
+        <div class="point"><i></i></div>
       </div>
 
     </p>
