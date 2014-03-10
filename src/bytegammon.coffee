@@ -11,8 +11,11 @@ if root.Meteor.isClient
     $('#hello').css('display', 'none')
     $('#hello').delay(100).fadeIn(1000)
 
-    $('.point').draggable()
-    $('.pointDrop').droppable()
+    $('.point').draggable
+      revert: 'invalid'
+
+    $('.pointDrop').droppable
+      accept: ".valid"
 
     console.debug "hello"
 
