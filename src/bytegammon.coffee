@@ -21,7 +21,6 @@ if root.Meteor.isClient
       drag: (event, ui) ->
         thisVar = $(this)
       #this.addClass('valid')
-
       revert: 'invalid'
       revertDuration: 200
 
